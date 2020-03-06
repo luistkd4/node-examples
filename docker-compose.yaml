@@ -1,6 +1,6 @@
 version: '3'
 services:
   node-server:
-    image: "nodeapp:latest"
+    image: "nodeapp:${TAG}"
     ports:
       - "8081-8113:3000"
