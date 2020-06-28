@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  database:
+    container_name: mongo
+    image: mongo
+    restart: always
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=123qwe
+      - MONGO_INITDB_DATABASE=mydata
+
+  app:
+    container_name: app
+    build: .
+    depends_on:
+      - database
+    environment: 
+      - database-user=admin
+      - database-password=123qwe
+      - database-host-name=mongo
+      - database-port=27017
+      - database-name=mydata
