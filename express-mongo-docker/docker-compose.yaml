@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   database:
-    container_name: mongo
+    container_name: mongo-server
     image: mongo
     restart: always
     environment: 
@@ -17,6 +17,8 @@ services:
     environment: 
       - database-user=admin
       - database-password=123qwe
-      - database-host-name=mongo
+      - database-host-name=mongo-server
       - database-port=27017
       - database-name=mydata
+    ports:
+      - 8080:8080
