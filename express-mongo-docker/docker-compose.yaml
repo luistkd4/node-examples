@@ -7,7 +7,6 @@ services:
     environment: 
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=123qwe
-      - MONGO_INITDB_DATABASE=mydata
 
   app:
     container_name: app
