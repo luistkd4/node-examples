@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 app.get('/create', function(req,res){
   var newUser = new users({name:'Bob Esponja'});
   newUser.save();
-  res.send('bob esponja\'s user created');
+  res.send('Bob Esponja\'s user created');
 })
 
 //list users
