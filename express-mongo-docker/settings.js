@@ -12,7 +12,10 @@ const DB_CONFIG = util.format('mongodb://%s:%s@%s:%s', db_user, db_pass, db_host
 
 mongoose.connect(DB_CONFIG, {useNewUrlParser: true}, (err) => {
     console.log('mongodb connected', err);
-})
+});
+
+var newUser = new users({name:'Lula Molusco'});
+newUser.save();
 
 const users = mongoose.model('users',{
     name: String
