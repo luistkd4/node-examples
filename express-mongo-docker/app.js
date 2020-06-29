@@ -8,6 +8,14 @@ app.get('/', function (req, res) {
   res.send('Hello World!\n');
 });
 
+// create user
+app.get('/create', function(req,res){
+  var newUser = new users({name:'Bob Esponja'});
+  newUser.save();
+  res.send('bob esponja\'s user created');
+})
+
+//list users
 app.get('/users', function(req,res) {
     users.find({}, function (err, users){
         res.send(users);
